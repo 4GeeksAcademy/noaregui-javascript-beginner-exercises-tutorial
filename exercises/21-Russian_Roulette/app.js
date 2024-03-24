@@ -1,16 +1,21 @@
-// firePosition will be the position in which the gun will fire.
+// posición de disparo = firePosition --> Ponemos la bala en la posición 1.
+// Esto quiere decir que si al disparar la posición es 1, adiós.
 let firePosition = 1;
 
-// The output of spinChamber will be a number and it can be passed as a parameter to the fireGun function.
-const spinChamber = () => {
+// spinChamber = girar la recámara.Aquí tendrán que salir números aleatorios del 1 al 6.
+// Recuerda que si sale el 1 será donde está la bala.
+const spinChamber = () => { // function spinChamber() {}
     let chamberPosition = Math.floor((Math.random() * 6) + 1);
-    return chamberPosition;
+    return chamberPosition; // chamberPosition = La posición de la bala.
 };
 
-// Remove the // below and complete the commented lines
-const fireGun = (bulletPosition) => {
-    // if (... === firePosition) return ("You're dead!");
-    // else return ("Keep playing!");
+
+const fireGun = (bulletPosition) => { // function fireGun(bulletPosition)
+    if (bulletPosition === firePosition) {
+        return ("You're dead!");
+    }
+    else return ("Keep playing!");
 };
 
-console.log(fireGun(spinChamber()));
+
+console.log(fireGun("Ainhoa")); //No entiendo por qué se imprime así
